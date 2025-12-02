@@ -20,7 +20,7 @@ namespace Code.Gameplay.Features.Hero.Systems
             {
                 hero.isMoving = input.hasAxisInput;
 
-                if (input.hasAxisInput)
+                if (hero.isMoving)
                     hero.ReplaceDirection(input.AxisInput.normalized);
             }
         }
