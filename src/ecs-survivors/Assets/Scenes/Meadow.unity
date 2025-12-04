@@ -45817,6 +45817,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3438016003490983361, guid: 5aa0f6aecef0da643b3ff98e1dc91c2e, type: 3}
+      propertyPath: m_Size.x
+      value: 0.390625
+      objectReference: {fileID: 0}
+    - target: {fileID: 3438016003490983361, guid: 5aa0f6aecef0da643b3ff98e1dc91c2e, type: 3}
+      propertyPath: m_Size.y
+      value: 0.140625
+      objectReference: {fileID: 0}
+    - target: {fileID: 3438016003490983361, guid: 5aa0f6aecef0da643b3ff98e1dc91c2e, type: 3}
       propertyPath: m_Color.a
       value: 1
       objectReference: {fileID: 0}
@@ -45893,8 +45901,12 @@ PrefabInstance:
       value: goblin_torch_blue
       objectReference: {fileID: 0}
     - target: {fileID: 8121491457853820620, guid: 5aa0f6aecef0da643b3ff98e1dc91c2e, type: 3}
+      propertyPath: HP
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8121491457853820620, guid: 5aa0f6aecef0da643b3ff98e1dc91c2e, type: 3}
       propertyPath: Damage
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

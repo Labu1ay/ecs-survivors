@@ -18,7 +18,8 @@ namespace Code.Gameplay.Features.Movement.Systems
         {
             foreach (GameEntity mover in _movers)
             {
-                mover.Transform.position = mover.WorldPosition;
+                if(!mover.hasSelfDestructTimer)
+                    mover.Transform.position = mover.WorldPosition;
             }
         }
     }

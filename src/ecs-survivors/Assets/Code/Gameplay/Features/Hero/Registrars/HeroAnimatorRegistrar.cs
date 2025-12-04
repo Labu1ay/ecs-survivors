@@ -11,7 +11,8 @@ namespace Code.Gameplay.Features.Hero.Registrars
     {
       Entity
         .AddHeroAnimator(HeroAnimator)
-        .AddDamageTakenAnimator(HeroAnimator);
+        .AddDamageTakenAnimator(HeroAnimator)
+        .AddDiedAnimator(HeroAnimator);
     }
 
     public override void UnregisterComponents()
@@ -21,6 +22,9 @@ namespace Code.Gameplay.Features.Hero.Registrars
 
       if (Entity.hasDamageTakenAnimator)
         Entity.RemoveDamageTakenAnimator();
+      
+      if (Entity.hasDiedAnimator)
+        Entity.RemoveDiedAnimator();
     }
   }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Code.Gameplay.Features.Hero.Behaviours
 {
-  public class HeroAnimator : MonoBehaviour, IDamageTakenAnimator
+  public class HeroAnimator : MonoBehaviour, IDamageTakenAnimator, IDiedAnimator
   {
     private static readonly int OverlayIntensityProperty = Shader.PropertyToID("_OverlayIntensity");
     
