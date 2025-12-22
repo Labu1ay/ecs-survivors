@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 2
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -224,13 +225,18 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 595201338
+    uuid:
+      value0: 1938021026
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: 1938021026
     name: Wood_Tower_Yellow
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Wood_Tower_Yellow_Frame_0
+    - name: Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -239,7 +245,7 @@ ScriptedImporter:
         width: 146
         height: 155
       spriteId: 138b54fcd128c554eb9c44d6b00c464e
-    - name: Wood_Tower_Yellow_Frame_1
+    - name: Frame_1
       frameIndex: 1
       additiveSortOrder: 0
       cellRect:
@@ -248,7 +254,7 @@ ScriptedImporter:
         width: 130
         height: 155
       spriteId: 0b4adbae4d1679246a52da400696ab30
-    - name: Wood_Tower_Yellow_Frame_2
+    - name: Frame_2
       frameIndex: 2
       additiveSortOrder: 0
       cellRect:
@@ -257,7 +263,7 @@ ScriptedImporter:
         width: 130
         height: 155
       spriteId: 6b2a5cfe00fffc4419618fa6964b73aa
-    - name: Wood_Tower_Yellow_Frame_3
+    - name: Frame_3
       frameIndex: 3
       additiveSortOrder: 0
       cellRect:
@@ -266,7 +272,7 @@ ScriptedImporter:
         width: 130
         height: 155
       spriteId: 6f270f9bd1a21154c8b504a5fccc81b1
-    - name: Wood_Tower_Yellow_Frame_4
+    - name: Frame_4
       frameIndex: 4
       additiveSortOrder: 0
       cellRect:
@@ -342,3 +348,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 256, y: 192}
+  previousTextureSize: {x: 512, y: 512}

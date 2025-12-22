@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 2
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -284,13 +285,18 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 1737248505
+    uuid:
+      value0: 3661048349
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: -633918947
     name: Tree_Raw
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Tree_Raw_Frame_0
+    - name: Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -299,7 +305,7 @@ ScriptedImporter:
         width: 111
         height: 174
       spriteId: 0917afbcd4a8b4a4b9696c324aacf638
-    - name: Tree_Raw_Frame_1
+    - name: Frame_1
       frameIndex: 1
       additiveSortOrder: 0
       cellRect:
@@ -308,7 +314,7 @@ ScriptedImporter:
         width: 111
         height: 174
       spriteId: 6c3275817e4fb6f439f8b570499a2db5
-    - name: Tree_Raw_Frame_2
+    - name: Frame_2
       frameIndex: 2
       additiveSortOrder: 0
       cellRect:
@@ -317,7 +323,7 @@ ScriptedImporter:
         width: 110
         height: 174
       spriteId: c1833b0b34702c749bcbc44ea9dff213
-    - name: Tree_Raw_Frame_3
+    - name: Frame_3
       frameIndex: 3
       additiveSortOrder: 0
       cellRect:
@@ -326,7 +332,7 @@ ScriptedImporter:
         width: 111
         height: 174
       spriteId: d00aeb71eb373c14f8a58268a06b27d2
-    - name: Tree_Raw_Frame_4
+    - name: Frame_4
       frameIndex: 4
       additiveSortOrder: 0
       cellRect:
@@ -335,7 +341,7 @@ ScriptedImporter:
         width: 111
         height: 174
       spriteId: 0127711a1a412544ba7e78ac8e966a92
-    - name: Tree_Raw_Frame_5
+    - name: Frame_5
       frameIndex: 5
       additiveSortOrder: 0
       cellRect:
@@ -344,7 +350,7 @@ ScriptedImporter:
         width: 106
         height: 173
       spriteId: 5a4f1f91404b9124bb0f5dd432d7b218
-    - name: Tree_Raw_Frame_6
+    - name: Frame_6
       frameIndex: 6
       additiveSortOrder: 0
       cellRect:
@@ -353,7 +359,7 @@ ScriptedImporter:
         width: 109
         height: 171
       spriteId: 8702d7f89b4d0d442a722247b96a9b28
-    - name: Tree_Raw_Frame_7
+    - name: Frame_7
       frameIndex: 7
       additiveSortOrder: 0
       cellRect:
@@ -429,3 +435,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 192, y: 192}
+  previousTextureSize: {x: 512, y: 512}

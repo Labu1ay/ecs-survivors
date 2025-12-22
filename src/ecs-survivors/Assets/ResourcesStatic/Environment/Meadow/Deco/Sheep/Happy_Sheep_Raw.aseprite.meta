@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 2
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -424,13 +425,18 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -831141133
+    uuid:
+      value0: 3816857215
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: -478110081
     name: Happy_Sheep_Raw
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Happy_Sheep_Raw_Frame_0
+    - name: Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -439,7 +445,7 @@ ScriptedImporter:
         width: 43
         height: 38
       spriteId: 9fc18d80468c92144b6271e2c9fe053e
-    - name: Happy_Sheep_Raw_Frame_1
+    - name: Frame_1
       frameIndex: 1
       additiveSortOrder: 0
       cellRect:
@@ -448,7 +454,7 @@ ScriptedImporter:
         width: 43
         height: 38
       spriteId: 7b2de5aa6c003d9499fd2dc2b6a5426f
-    - name: Happy_Sheep_Raw_Frame_2
+    - name: Frame_2
       frameIndex: 2
       additiveSortOrder: 0
       cellRect:
@@ -457,7 +463,7 @@ ScriptedImporter:
         width: 43
         height: 38
       spriteId: 7474125ae4937f14ba419b266f9eee05
-    - name: Happy_Sheep_Raw_Frame_3
+    - name: Frame_3
       frameIndex: 3
       additiveSortOrder: 0
       cellRect:
@@ -466,7 +472,7 @@ ScriptedImporter:
         width: 43
         height: 38
       spriteId: f62a3be60814ca64fb86edbb47957f00
-    - name: Happy_Sheep_Raw_Frame_4
+    - name: Frame_4
       frameIndex: 4
       additiveSortOrder: 0
       cellRect:
@@ -475,7 +481,7 @@ ScriptedImporter:
         width: 43
         height: 37
       spriteId: 3ac2472a951f1d44589239c99e8dcf7c
-    - name: Happy_Sheep_Raw_Frame_5
+    - name: Frame_5
       frameIndex: 5
       additiveSortOrder: 0
       cellRect:
@@ -484,7 +490,7 @@ ScriptedImporter:
         width: 46
         height: 36
       spriteId: b43a6796fc0483549929926524007f70
-    - name: Happy_Sheep_Raw_Frame_6
+    - name: Frame_6
       frameIndex: 6
       additiveSortOrder: 0
       cellRect:
@@ -493,7 +499,7 @@ ScriptedImporter:
         width: 46
         height: 36
       spriteId: d945e6c05e54a3a418a930c30c897dc7
-    - name: Happy_Sheep_Raw_Frame_7
+    - name: Frame_7
       frameIndex: 7
       additiveSortOrder: 0
       cellRect:
@@ -502,7 +508,7 @@ ScriptedImporter:
         width: 44
         height: 37
       spriteId: f2fbbf5709c0463499f08d9d59492a61
-    - name: Happy_Sheep_Raw_Frame_8
+    - name: Frame_8
       frameIndex: 8
       additiveSortOrder: 0
       cellRect:
@@ -511,7 +517,7 @@ ScriptedImporter:
         width: 43
         height: 38
       spriteId: 5ccc3b3413672194f8e84734c169bd0e
-    - name: Happy_Sheep_Raw_Frame_9
+    - name: Frame_9
       frameIndex: 9
       additiveSortOrder: 0
       cellRect:
@@ -520,7 +526,7 @@ ScriptedImporter:
         width: 43
         height: 38
       spriteId: 17f6698f18295ec4b816dfe0c0233881
-    - name: Happy_Sheep_Raw_Frame_10
+    - name: Frame_10
       frameIndex: 10
       additiveSortOrder: 0
       cellRect:
@@ -529,7 +535,7 @@ ScriptedImporter:
         width: 38
         height: 48
       spriteId: fee429f3f40009e49a51e97e29958b75
-    - name: Happy_Sheep_Raw_Frame_11
+    - name: Frame_11
       frameIndex: 11
       additiveSortOrder: 0
       cellRect:
@@ -538,7 +544,7 @@ ScriptedImporter:
         width: 45
         height: 50
       spriteId: 7c1c693c12775ae4e954dfaf5f1422dd
-    - name: Happy_Sheep_Raw_Frame_12
+    - name: Frame_12
       frameIndex: 12
       additiveSortOrder: 0
       cellRect:
@@ -547,7 +553,7 @@ ScriptedImporter:
         width: 45
         height: 51
       spriteId: 8f8646bc9b9253b42ba71de26d4a6044
-    - name: Happy_Sheep_Raw_Frame_13
+    - name: Frame_13
       frameIndex: 13
       additiveSortOrder: 0
       cellRect:
@@ -556,7 +562,7 @@ ScriptedImporter:
         width: 45
         height: 45
       spriteId: f5df5c31e133fd348b350caac5e0fa3d
-    - name: Happy_Sheep_Raw_Frame_14
+    - name: Frame_14
       frameIndex: 14
       additiveSortOrder: 0
       cellRect:
@@ -632,3 +638,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 128, y: 128}
+  previousTextureSize: {x: 256, y: 256}
