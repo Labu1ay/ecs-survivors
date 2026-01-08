@@ -5,29 +5,29 @@ using UnityEngine;
 
 namespace Code.Gameplay.Features.Movement.Systems
 {
-    public class DirectionalDeltaMoveSystem : IExecuteSystem
+  public class DirectionalDeltaMoveSystem : IExecuteSystem
+  {
+    private readonly ITimeService _time;
+    private readonly IGroup<GameEntity> _movers;
+
+    public DirectionalDeltaMoveSystem(GameContext gameContext, ITimeService time)
     {
-        private readonly ITimeService _time;
-        private readonly IGroup<GameEntity> _movers;
-
-        public DirectionalDeltaMoveSystem(GameContext gameContext, ITimeService time)
-        {
-            _time = time;
-            _movers = gameContext.GetGroup(GameMatcher
-                .AllOf(
-                    GameMatcher.WorldPosition,
-                    GameMatcher.Direction,
-                    GameMatcher.Speed,
-                    GameMatcher.Moving,
-                    GameMatcher.MovementAvailable));
-        }
-
-        public void Execute()
-        {
-            foreach (GameEntity mover in _movers)
-            {
-                mover.ReplaceWorldPosition((Vector2)mover.WorldPosition + mover.Direction * mover.Speed * _time.DeltaTime);
-            }
-        }
+      _time = time;
+      _movers = gameContext.GetGroup(GameMatcher
+        .AllOf(
+          GameMatcher.WorldPosition,
+          GameMatcher.Direction,
+          GameMatcher.Speed,
+          GameMatcher.Moving,
+          GameMatcher.MovementAvailable));
     }
+
+    public void Execute()
+    {
+      foreach (GameEntity mover in _movers)
+      {
+        mover.ReplaceWorldPosition((Vector2)mover.WorldPosition + mover.Direction * mover.Speed * _time.DeltaTime);
+      }
+    }
+  }
 }
