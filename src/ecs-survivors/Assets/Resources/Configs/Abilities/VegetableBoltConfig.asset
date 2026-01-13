@@ -15,7 +15,7 @@ MonoBehaviour:
   AbilityId: 1
   Levels:
   - Cooldown: 1
-    ViewPrefab: {fileID: 4363760508291734837, guid: 08ce9f5922001044d87f0b92a159a8c4, type: 3}
+    ViewPrefab: {fileID: 6295621220853740386, guid: 6ae3b1c6e45616043bf61e8d71a77b5d, type: 3}
     EffectSetups:
     - EffectTypeId: 1
       Value: 0.1
@@ -24,8 +24,49 @@ MonoBehaviour:
       Value: -5
       Duration: 1
       Period: 0
+    - StatusTypeId: 1
+      Value: 0.35
+      Duration: 2
+      Period: 0.5
+    - StatusTypeId: 1
+      Value: 0.35
+      Duration: 2
+      Period: 0.5
+    - StatusTypeId: 1
+      Value: 0.35
+      Duration: 2
+      Period: 0.5
+    - StatusTypeId: 1
+      Value: 0.35
+      Duration: 2
+      Period: 0.5
+    - StatusTypeId: 1
+      Value: 0.35
+      Duration: 2
+      Period: 0.5
+    - StatusTypeId: 1
+      Value: 0.35
+      Duration: 2
+      Period: 0.5
+    - StatusTypeId: 1
+      Value: 0.35
+      Duration: 2
+      Period: 0.5
+    - StatusTypeId: 1
+      Value: 0.35
+      Duration: 2
+      Period: 0.5
+    - StatusTypeId: 1
+      Value: 0.35
+      Duration: 2
+      Period: 0.5
     ProjectileSetup:
+      ProjectileCount: 1
       Speed: 2
       Pierce: 3
       ContactRadius: 0.1
       Lifetime: 3
+      OrbitRadius: 0
+    AuraSetup:
+      Radius: 0
+      Interval: 0
