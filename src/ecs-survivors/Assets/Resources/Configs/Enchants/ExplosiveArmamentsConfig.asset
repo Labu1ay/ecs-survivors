@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77e1fe3ef19344e5b9f22eac602f7d62, type: 3}
   m_Name: ExplosiveArmamentsConfig
   m_EditorClassIdentifier: 
-  TypeId: 1
-  EffectSetups: []
-  StatusSetups:
-  - StatusTypeId: 1
-    Value: 0.35
-    Duration: 2
-    Period: 0.5
+  TypeId: 2
+  EffectSetups:
+  - EffectTypeId: 1
+    Value: 3
+  StatusSetups: []
+  Radius: 2
+  ViewPrefab: {fileID: 6902555966744461871, guid: 1341d554ea3ef934da5f10cbfae07840, type: 3}
