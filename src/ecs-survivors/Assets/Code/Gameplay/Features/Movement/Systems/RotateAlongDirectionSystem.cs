@@ -1,4 +1,4 @@
-﻿using Entitas;
+using Entitas;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.Movement.Systems
@@ -11,8 +11,8 @@ namespace Code.Gameplay.Features.Movement.Systems
     {
       _entities = game.GetGroup(GameMatcher
         .AllOf(
-          GameMatcher.Transform,
-          GameMatcher.RotationAlignedAlongDirection,
+          GameMatcher.Transform, 
+          GameMatcher.RotationAlignedAlongDirection, 
           GameMatcher.Direction));
     }
 
@@ -23,7 +23,7 @@ namespace Code.Gameplay.Features.Movement.Systems
         if (entity.Direction.sqrMagnitude >= 0.01f)
         {
           float angle = Mathf.Atan2(entity.Direction.y, entity.Direction.x) * Mathf.Rad2Deg;
-          entity.Transform.rotation = Quaternion.Euler(0f, 0f, angle);
+          entity.Transform.rotation = Quaternion.Euler(0, 0, angle);
         }
       }
     }

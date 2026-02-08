@@ -10,7 +10,7 @@
         ? GameContext.GetEntityWithId(effect.ProducerId)
         : null;
     }
-    
+
     public static GameEntity Target(this GameEntity effect)
     {
       return effect.hasTargetId

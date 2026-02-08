@@ -6,14 +6,14 @@ namespace Code.Gameplay.Features.Enchants.Registrars
   public class EnchantHolderRegistrar : EntityComponentRegistrar
   {
     public EnchantHolder EnchantHolder;
-    
-    public override void RegisterComponents() => 
-      Entity.AddEnchantHolder(EnchantHolder);
+
+    public override void RegisterComponents() =>
+      Entity.AddEnchantsHolder(EnchantHolder);
 
     public override void UnregisterComponents()
     {
-      if(Entity.hasEnchantHolder)
-        Entity.RemoveEnchantHolder();
+      if (Entity.hasEnchantsHolder)
+        Entity.RemoveEnchantsHolder();
     }
   }
 }

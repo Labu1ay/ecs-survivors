@@ -1,4 +1,4 @@
-﻿using Code.Common.Entity;
+using Code.Common.Entity;
 using Code.Gameplay.Common;
 using Entitas;
 

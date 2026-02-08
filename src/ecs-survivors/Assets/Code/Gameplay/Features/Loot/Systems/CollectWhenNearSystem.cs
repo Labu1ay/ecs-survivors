@@ -1,4 +1,4 @@
-﻿using Entitas;
+using Entitas;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.Loot.Systems
@@ -14,12 +14,12 @@ namespace Code.Gameplay.Features.Loot.Systems
     {
       _heroes = game.GetGroup(GameMatcher
         .AllOf(
-          GameMatcher.Hero, 
+          GameMatcher.Hero,
           GameMatcher.WorldPosition));
       
       _pullables = game.GetGroup(GameMatcher
         .AllOf(
-          GameMatcher.Pulling, 
+          GameMatcher.Pulling,
           GameMatcher.WorldPosition));
     }
 

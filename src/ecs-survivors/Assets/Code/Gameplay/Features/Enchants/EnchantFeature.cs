@@ -1,4 +1,4 @@
-﻿using Code.Gameplay.Features.Enchants.Systems;
+using Code.Gameplay.Features.Enchants.Systems;
 using Code.Infrastructure.Systems;
 
 namespace Code.Gameplay.Features.Enchants

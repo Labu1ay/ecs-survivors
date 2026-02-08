@@ -7,12 +7,12 @@ namespace Code.Infrastructure.Systems
   {
     private readonly DiContainer _container;
 
-    public SystemFactory(DiContainer container) =>
+    public SystemFactory(DiContainer container) => 
       _container = container;
 
     public T Create<T>() where T : ISystem =>
       _container.Instantiate<T>();
-    
+
     public T Create<T>(params object[] args) where T : ISystem =>
       _container.Instantiate<T>(args);
   }

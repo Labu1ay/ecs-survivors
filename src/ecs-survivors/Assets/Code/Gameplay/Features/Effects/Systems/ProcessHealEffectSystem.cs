@@ -1,4 +1,4 @@
-﻿using Entitas;
+using Entitas;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.Effects.Systems
@@ -21,16 +21,16 @@ namespace Code.Gameplay.Features.Effects.Systems
       foreach (GameEntity effect in _effects)
       {
         GameEntity target = effect.Target();
-        
+
         effect.isProcessed = true;
-        
-        if(target.isDead)
+       
+        if (target.isDead)
           continue;
 
-        if (target.hasCurrentHP && target.hasMaxHP)
+        if (target.hasCurrentHp && target.hasMaxHp)
         {
-          var newValue = Mathf.Min(target.CurrentHP + effect.EffectValue, target.MaxHP);
-          target.ReplaceCurrentHP(newValue);
+          float newValue = Mathf.Min(target.CurrentHp + effect.EffectValue, target.MaxHp);
+          target.ReplaceCurrentHp(newValue);
         }
       }
     }

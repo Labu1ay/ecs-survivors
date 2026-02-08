@@ -1,4 +1,4 @@
-﻿using Code.Gameplay.Common.Time;
+using Code.Gameplay.Common.Time;
 using Entitas;
 using UnityEngine;
 
@@ -6,21 +6,21 @@ namespace Code.Gameplay.Features.Movement.Systems
 {
   public class OrbitalDeltaMoveSystem : IExecuteSystem
   {
-    private readonly ITimeService _time;
     private readonly IGroup<GameEntity> _movers;
+    private readonly ITimeService _time;
 
-    public OrbitalDeltaMoveSystem(GameContext gameContext, ITimeService time)
+    public OrbitalDeltaMoveSystem(GameContext game, ITimeService time)
     {
       _time = time;
-      _movers = gameContext.GetGroup(GameMatcher
+      _movers = game.GetGroup(GameMatcher
         .AllOf(
-          GameMatcher.OrbitPhase,
-          GameMatcher.OrbitCenterPosition,
-          GameMatcher.OrbitRadius,
-          GameMatcher.WorldPosition,
-          GameMatcher.Speed,
-          GameMatcher.Moving,
-          GameMatcher.MovementAvailable));
+          GameMatcher.OrbitPhase, 
+          GameMatcher.OrbitCenterPosition, 
+          GameMatcher.OrbitRadius, 
+          GameMatcher.WorldPosition, 
+          GameMatcher.Speed, 
+          GameMatcher.MovementAvailable, 
+          GameMatcher.Moving));
     }
 
     public void Execute()
@@ -34,7 +34,7 @@ namespace Code.Gameplay.Features.Movement.Systems
           Mathf.Cos(phase) * mover.OrbitRadius,
           Mathf.Sin(phase) * mover.OrbitRadius,
           0);
-        
+
         Vector3 newPosition = newRelativePosition + mover.OrbitCenterPosition;
         
         mover.ReplaceWorldPosition(newPosition);

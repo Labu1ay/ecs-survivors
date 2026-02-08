@@ -3,7 +3,7 @@ using Code.Infrastructure.Systems;
 
 namespace Code.Gameplay.Features.EffectApplication
 {
-  public sealed class EffectApplicationFeature : Feature
+  public class EffectApplicationFeature : Feature
   {
     public EffectApplicationFeature(ISystemFactory systems)
     {

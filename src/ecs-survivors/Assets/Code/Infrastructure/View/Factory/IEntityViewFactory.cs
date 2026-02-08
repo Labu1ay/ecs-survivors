@@ -1,4 +1,4 @@
-﻿namespace Code.Infrastructure.View.Factory
+namespace Code.Infrastructure.View.Factory
 {
   public interface IEntityViewFactory
   {

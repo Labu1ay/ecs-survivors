@@ -7,9 +7,8 @@ namespace Code.Infrastructure.View
 {
   public class EntityBehaviour : MonoBehaviour, IEntityView
   {
-    private ICollisionRegistry _collisionRegistry;
-    
     private GameEntity _entity;
+    private ICollisionRegistry _collisionRegistry;
     public GameEntity Entity => _entity;
 
     [Inject]
@@ -25,7 +24,7 @@ namespace Code.Infrastructure.View
       foreach (IEntityComponentRegistrar registrar in GetComponentsInChildren<IEntityComponentRegistrar>()) 
         registrar.RegisterComponents();
 
-      foreach (Collider2D collider2d in GetComponentsInChildren<Collider2D>( includeInactive: true)) 
+      foreach (Collider2D collider2d in GetComponentsInChildren<Collider2D>(includeInactive: true)) 
         _collisionRegistry.Register(collider2d.GetInstanceID(), _entity);
     }
 
@@ -33,8 +32,8 @@ namespace Code.Infrastructure.View
     {
       foreach (IEntityComponentRegistrar registrar in GetComponentsInChildren<IEntityComponentRegistrar>()) 
         registrar.UnregisterComponents();
-      
-      foreach (Collider2D collider2d in GetComponentsInChildren<Collider2D>( includeInactive: true)) 
+
+      foreach (Collider2D collider2d in GetComponentsInChildren<Collider2D>(includeInactive: true)) 
         _collisionRegistry.Unregister(collider2d.GetInstanceID());
       
       _entity.Release(this);

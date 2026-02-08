@@ -1,4 +1,4 @@
-﻿using Entitas;
+using Entitas;
 
 namespace Code.Gameplay.Features.TargetCollection.Systems
 {
@@ -8,15 +8,15 @@ namespace Code.Gameplay.Features.TargetCollection.Systems
 
     public CleanupTargetBuffersSystem(GameContext game)
     {
-      _entities = game.GetGroup(GameMatcher.TargetsBuffer);
+      _entities = game.GetGroup(GameMatcher.TargetBuffer);
     }
     
     public void Cleanup()
     {
       foreach (GameEntity entity in _entities)
       {
-        entity.TargetsBuffer.Clear();
-      }
+        entity.TargetBuffer.Clear();
+      }  
     }
   }
 }

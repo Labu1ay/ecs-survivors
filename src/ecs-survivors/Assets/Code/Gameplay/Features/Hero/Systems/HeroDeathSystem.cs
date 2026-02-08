@@ -10,8 +10,8 @@ namespace Code.Gameplay.Features.Hero.Systems
     {
       _heroes = game.GetGroup(GameMatcher
         .AllOf(
-          GameMatcher.Hero, 
-          GameMatcher.Dead, 
+          GameMatcher.Hero,
+          GameMatcher.Dead,
           GameMatcher.HeroAnimator,
           GameMatcher.ProcessingDeath));
     }

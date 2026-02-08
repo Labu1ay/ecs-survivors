@@ -18,7 +18,6 @@ namespace Code.Gameplay.Features.Statuses.Factory
     public GameEntity CreateStatus(StatusSetup setup, int producerId, int targetId)
     {
       GameEntity status;
-      
       switch (setup.StatusTypeId)
       {
         case StatusTypeId.Poison:
@@ -33,8 +32,9 @@ namespace Code.Gameplay.Features.Statuses.Factory
         case StatusTypeId.ExplosiveEnchant:
           status = CreateExplosiveEnchantStatus(setup, producerId, targetId);
           break;
+        
         default:
-          throw new Exception($"Status with typeId {setup.StatusTypeId} does not exist");
+          throw new Exception($"Status with type id {setup.StatusTypeId} does not exist");
       }
 
       status
@@ -63,13 +63,13 @@ namespace Code.Gameplay.Features.Statuses.Factory
     private GameEntity CreateFreezeStatus(StatusSetup setup, int producerId, int targetId)
     {
       return CreateEntity.Empty()
-          .AddId(_identifiers.Next())
-          .AddStatusTypeId(StatusTypeId.Freeze)
-          .AddEffectValue(setup.Value)
-          .AddProducerId(producerId)
-          .AddTargetId(targetId)
-          .With(x => x.isStatus = true)
-          .With(x => x.isFreeze = true)
+        .AddId(_identifiers.Next())
+        .AddStatusTypeId(StatusTypeId.Freeze)
+        .AddEffectValue(setup.Value)
+        .AddProducerId(producerId)
+        .AddTargetId(targetId)
+        .With(x => x.isStatus = true)
+        .With(x => x.isFreeze = true)
         ;
     }
 
@@ -84,9 +84,9 @@ namespace Code.Gameplay.Features.Statuses.Factory
           .AddTargetId(targetId)
           .With(x => x.isStatus = true)
           .With(x => x.isPoisonEnchant = true)
-        ;
+        ;      
     }
-    
+
     private GameEntity CreateExplosiveEnchantStatus(StatusSetup setup, int producerId, int targetId)
     {
       return CreateEntity.Empty()

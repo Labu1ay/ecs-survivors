@@ -5,13 +5,13 @@ namespace Code.Gameplay.Features.CharacterStats.Systems
 {
   public class StatChangeSystem : IExecuteSystem
   {
-    private readonly GameContext _game;
     private readonly IGroup<GameEntity> _statOwners;
+    private readonly GameContext _game;
 
     public StatChangeSystem(GameContext game)
     {
       _game = game;
-      
+
       _statOwners = game.GetGroup(GameMatcher
         .AllOf(
           GameMatcher.Id,

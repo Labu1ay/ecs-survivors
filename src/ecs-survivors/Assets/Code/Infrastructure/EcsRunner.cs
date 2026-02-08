@@ -1,4 +1,7 @@
 ﻿using Code.Gameplay;
+using Code.Gameplay.Cameras.Provider;
+using Code.Gameplay.Common.Time;
+using Code.Gameplay.Input.Service;
 using Code.Infrastructure.Systems;
 using UnityEngine;
 using Zenject;
@@ -7,16 +10,15 @@ namespace Code.Infrastructure
 {
   public class EcsRunner : MonoBehaviour
   {
-    private ISystemFactory _systemFactory;
-
     private BattleFeature _battleFeature;
+    private ISystemFactory _systemFactory;
 
     [Inject]
     private void Construct(ISystemFactory systemFactory)
     {
       _systemFactory = systemFactory;
     }
-
+    
     private void Start()
     {
       _battleFeature = _systemFactory.Create<BattleFeature>();

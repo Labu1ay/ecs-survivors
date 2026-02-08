@@ -38,16 +38,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1557407318731609291, guid: 02c1c61dae6b7e34d976ffa02368e391, type: 3}
       propertyPath: m_Size.x
-      value: 0.32
+      value: 0.06
       objectReference: {fileID: 0}
     - target: {fileID: 1557407318731609291, guid: 02c1c61dae6b7e34d976ffa02368e391, type: 3}
       propertyPath: m_Size.y
-      value: 0.32
+      value: 0.04
       objectReference: {fileID: 0}
     - target: {fileID: 1557407318731609291, guid: 02c1c61dae6b7e34d976ffa02368e391, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -219949570, guid: 32690fb2fe105264186c5472c3b2dab7, type: 3}
+      objectReference: {fileID: -219949570, guid: d5b38a44d661b59469b9795112af70db, type: 3}
     - target: {fileID: 1557407318731609291, guid: 02c1c61dae6b7e34d976ffa02368e391, type: 3}
       propertyPath: m_SortingLayer
       value: 5
@@ -113,7 +113,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1186230661049640603}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 600c6ee8dca741eb8473b874c96ff382, type: 3}
+  m_Script: {fileID: 11500000, guid: 3d9f8c0a3ffa4ffab7f8573459b8ef1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   EntityView: {fileID: 6295621220853740386}
@@ -131,7 +131,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1186230661049640603}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 304852977ebf429880a7ecea71c76ed4, type: 3}
+  m_Script: {fileID: 11500000, guid: 511653e70f1b4434a642cfce8b90ee4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6379854047145016537 stripped
@@ -149,7 +149,7 @@ Animator:
   m_GameObject: {fileID: 6379854047145016537}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f0525b2d5a99f9a4a81d473f57f198fb, type: 2}
+  m_Controller: {fileID: 9100000, guid: c5fa143b2db6eca4cb28a89b24f97f97, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

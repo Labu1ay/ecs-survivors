@@ -1,4 +1,4 @@
-﻿using Code.Gameplay.Features.LevelUp.Behaviours;
+using Code.Gameplay.Features.LevelUp.Behaviours;
 using Code.Infrastructure.AssetManagement;
 using UnityEngine;
 using Zenject;
@@ -14,11 +14,11 @@ namespace Code.Gameplay.Features.LevelUp.Windows
 
     public AbilityUIFactory(IInstantiator instantiator, IAssetProvider assetProvider)
     {
-      _instantiator = instantiator;
       _assetProvider = assetProvider;
+      _instantiator = instantiator;
     }
 
     public AbilityCard CreateAbilityCard(Transform parent) => 
-      _instantiator.InstantiatePrefabForComponent<AbilityCard>(_assetProvider.LoadAsset<AbilityCard>(AbilityCardPrefabPath), parent);
+      _instantiator.InstantiatePrefabForComponent<AbilityCard>(_assetProvider.LoadAsset(AbilityCardPrefabPath), parent);
   }
 }

@@ -7,15 +7,13 @@ namespace Code.Infrastructure.View
 {
   public class SelfInitializedEntityView : MonoBehaviour
   {
-    private IIdentifierService _identifiers;
-    
     public EntityBehaviour EntityBehaviour;
+    
+    private IIdentifierService _identifiers;
 
     [Inject]
-    private void Construct(IIdentifierService identifiers)
-    {
+    private void Construct(IIdentifierService identifiers) => 
       _identifiers = identifiers;
-    }
 
     private void Awake()
     {
@@ -24,5 +22,6 @@ namespace Code.Infrastructure.View
       
       EntityBehaviour.SetEntity(entity);
     }
+
   }
 }

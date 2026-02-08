@@ -8,14 +8,14 @@ namespace Code.Gameplay.Features.Cooldowns.Systems
   {
     private readonly ITimeService _time;
     private readonly IGroup<GameEntity> _cooldownables;
-    private List<GameEntity> _buffer = new (32);
+    private readonly List<GameEntity> _buffer = new (32);
 
     public CooldownSystem(GameContext game, ITimeService time)
     {
       _time = time;
       _cooldownables = game.GetGroup(GameMatcher
         .AllOf(
-          GameMatcher.Cooldown, 
+          GameMatcher.Cooldown,
           GameMatcher.CooldownLeft));
     }
 

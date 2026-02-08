@@ -1,4 +1,4 @@
-﻿namespace Code.Gameplay.Features.Loot
+namespace Code.Gameplay.Features.Loot
 {
   public enum LootTypeId
   {
@@ -6,6 +6,6 @@
     ExpGem = 1,
     HealingItem = 2,
     PoisonEnchantItem = 3,
-    ExplosionEnchantItem = 4
+    ExplosiveEnchantItem = 4,
   }
 }

@@ -14,14 +14,14 @@ namespace Code.Gameplay.Features.EffectApplication.Systems
       _effectFactory = effectFactory;
       _entities = game.GetGroup(GameMatcher
         .AllOf(
-          GameMatcher.TargetsBuffer,
+          GameMatcher.TargetBuffer,
           GameMatcher.EffectSetups));
     }
     
     public void Execute()
     {
       foreach (GameEntity entity in _entities)
-      foreach (int targetId in entity.TargetsBuffer)
+      foreach (int targetId in entity.TargetBuffer)
       foreach (EffectSetup setup in entity.EffectSetups)
       {
         _effectFactory.CreateEffect(setup, ProducerId(entity), targetId);

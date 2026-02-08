@@ -6,14 +6,14 @@ namespace Code.Gameplay.Features.Hero.Systems
   public class FinalizeHeroDeathProcessingSystem : IExecuteSystem
   {
     private readonly IGroup<GameEntity> _heroes;
-    private List<GameEntity> _buffer = new (1);
+    private readonly List<GameEntity> _buffer = new(1);
 
     public FinalizeHeroDeathProcessingSystem(GameContext game)
     {
       _heroes = game.GetGroup(GameMatcher
         .AllOf(
-          GameMatcher.Hero, 
-          GameMatcher.Dead, 
+          GameMatcher.Hero,
+          GameMatcher.Dead,
           GameMatcher.ProcessingDeath));
     }
 

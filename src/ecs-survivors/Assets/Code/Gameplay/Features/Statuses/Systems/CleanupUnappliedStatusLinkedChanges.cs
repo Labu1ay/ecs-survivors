@@ -1,13 +1,13 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using Entitas;
 
 namespace Code.Gameplay.Features.Statuses.Systems
 {
   public class CleanupUnappliedStatusLinkedChanges : ICleanupSystem
   {
-    private readonly GameContext _game;
     private readonly IGroup<GameEntity> _statuses;
     private readonly List<GameEntity> _buffer = new(32);
+    private readonly GameContext _game;
 
     public CleanupUnappliedStatusLinkedChanges(GameContext game)
     {
@@ -15,7 +15,7 @@ namespace Code.Gameplay.Features.Statuses.Systems
       _statuses = game.GetGroup(GameMatcher
         .AllOf(
           GameMatcher.Id,
-          GameMatcher.Status, 
+          GameMatcher.Status,
           GameMatcher.Unapplied));
     }
 

@@ -3,7 +3,7 @@ using Code.Infrastructure.Systems;
 
 namespace Code.Gameplay.Features.Enemies
 {
-  public class EnemyFeature : Feature
+  public sealed class EnemyFeature : Feature
   {
     public EnemyFeature(ISystemFactory systems)
     {

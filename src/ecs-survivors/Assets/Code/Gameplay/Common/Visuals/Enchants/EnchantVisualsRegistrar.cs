@@ -13,7 +13,7 @@ namespace Code.Gameplay.Common.Visuals.Enchants
 
     public override void UnregisterComponents()
     {
-      if(Entity.hasEnchantVisuals)
+      if (Entity.hasEnchantVisuals)
         Entity.RemoveEnchantVisuals();
     }
   }

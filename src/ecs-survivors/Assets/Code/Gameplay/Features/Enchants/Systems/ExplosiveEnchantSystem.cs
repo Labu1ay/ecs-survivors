@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using Code.Gameplay.Features.Armaments.Factory;
 using Entitas;
 
@@ -12,7 +12,6 @@ namespace Code.Gameplay.Features.Enchants.Systems
     public ExplosiveEnchantSystem(GameContext game, IArmamentFactory armamentFactory) : base(game)
     {
       _armamentFactory = armamentFactory;
-      
       _enchants = game.GetGroup(GameMatcher
         .AllOf(
           GameMatcher.EnchantTypeId,
@@ -23,7 +22,7 @@ namespace Code.Gameplay.Features.Enchants.Systems
     protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context) =>
       context.CreateCollector(GameMatcher
         .AllOf(
-          GameMatcher.Armament, 
+          GameMatcher.Armament,
           GameMatcher.Reached)
         .Added());
 

@@ -1,4 +1,4 @@
-﻿using Code.Gameplay.Features.Armaments.System;
+using Code.Gameplay.Features.Armaments.Systems;
 using Code.Infrastructure.Systems;
 
 namespace Code.Gameplay.Features.Armaments

@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using Entitas;
 
 namespace Code.Gameplay.Features.TargetCollection.Systems
@@ -6,12 +6,12 @@ namespace Code.Gameplay.Features.TargetCollection.Systems
   public class MarkReachedSystem : IExecuteSystem
   {
     private readonly IGroup<GameEntity> _entities;
-    private readonly List<GameEntity> _buffer = new (128);
+    private readonly List<GameEntity> _buffer = new(128);
 
     public MarkReachedSystem(GameContext game)
     {
       _entities = game.GetGroup(GameMatcher
-        .AllOf(GameMatcher.TargetsBuffer)
+        .AllOf(GameMatcher.TargetBuffer)
         .NoneOf(GameMatcher.Reached));
     }
 
@@ -19,7 +19,7 @@ namespace Code.Gameplay.Features.TargetCollection.Systems
     {
       foreach (GameEntity entity in _entities.GetEntities(_buffer))
       {
-        if(entity.TargetsBuffer.Count > 0)
+        if (entity.TargetBuffer.Count > 0)
           entity.isReached = true;
       }
     }

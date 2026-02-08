@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace Code.Gameplay.Features.Statuses.Indexing
@@ -12,7 +12,7 @@ namespace Code.Gameplay.Features.Statuses.Indexing
 
     public int GetHashCode(StatusKey obj)
     {
-      return HashCode.Combine(obj.TargetId, (int)obj.TypeId);
+      return HashCode.Combine(obj.TargetId, (int) obj.TypeId);
     }
   }
 }

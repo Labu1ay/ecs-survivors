@@ -1,4 +1,4 @@
-﻿using Code.Gameplay.Features.Abilities;
+using Code.Gameplay.Features.Abilities;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.Armaments.Factory

@@ -5,16 +5,16 @@ namespace Code.Gameplay.Features.Statuses.Systems
 {
   public class StatusDurationSystem : IExecuteSystem
   {
-    private readonly ITimeService _time;
+    private readonly ITimeService _timeService;
     private readonly IGroup<GameEntity> _statuses;
 
-    public StatusDurationSystem(GameContext game, ITimeService time)
+    public StatusDurationSystem(GameContext game, ITimeService timeService)
     {
-      _time = time;
+      _timeService = timeService;
       _statuses = game.GetGroup(GameMatcher
         .AllOf(
           GameMatcher.Duration,
-          GameMatcher.Status, 
+          GameMatcher.Status,
           GameMatcher.TimeLeft));
     }
 
@@ -23,7 +23,7 @@ namespace Code.Gameplay.Features.Statuses.Systems
       foreach (GameEntity status in _statuses)
       {
         if (status.TimeLeft >= 0)
-          status.ReplaceTimeLeft(status.TimeLeft - _time.DeltaTime);
+          status.ReplaceTimeLeft(status.TimeLeft - _timeService.DeltaTime);
         else
           status.isUnapplied = true;
       }

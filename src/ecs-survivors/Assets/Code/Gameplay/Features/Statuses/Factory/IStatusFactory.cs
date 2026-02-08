@@ -1,4 +1,4 @@
-﻿namespace Code.Gameplay.Features.Statuses.Factory
+namespace Code.Gameplay.Features.Statuses.Factory
 {
   public interface IStatusFactory
   {

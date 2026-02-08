@@ -1,9 +1,9 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 namespace Code.Gameplay.Features.Loot.Factory
 {
   public interface ILootFactory
   {
-    GameEntity CreateLootItem(LootTypeId lootTypeId, Vector3 at);
+    GameEntity CreateLootItem(LootTypeId typeId, Vector3 at);
   }
 }

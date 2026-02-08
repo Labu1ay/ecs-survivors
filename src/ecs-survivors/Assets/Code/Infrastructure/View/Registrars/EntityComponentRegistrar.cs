@@ -1,4 +1,4 @@
-﻿namespace Code.Infrastructure.View.Registrars
+namespace Code.Infrastructure.View.Registrars
 {
   public abstract class EntityComponentRegistrar : EntityDependant, IEntityComponentRegistrar
   {

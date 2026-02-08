@@ -9,15 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2bb71e8dd9dc48c292c3b7fda0397dde, type: 3}
+  m_Script: {fileID: 11500000, guid: 9833df43fb064a3199752651eaefcfde, type: 3}
   m_Name: VegetableBoltConfig
   m_EditorClassIdentifier: 
   AbilityId: 1
   Levels:
-  - Icon: {fileID: -219949570, guid: 32690fb2fe105264186c5472c3b2dab7, type: 3}
+  - Icon: {fileID: -219949570, guid: d5b38a44d661b59469b9795112af70db, type: 3}
     Description: Adds a dangerous projectile
     Cooldown: 1
-    ViewPrefab: {fileID: 6295621220853740386, guid: 6ae3b1c6e45616043bf61e8d71a77b5d, type: 3}
+    ViewPrefab: {fileID: 6295621220853740386, guid: 08ce9f5922001044d87f0b92a159a8c4, type: 3}
     EffectSetups:
     - EffectTypeId: 1
       Value: 1
@@ -32,10 +32,10 @@ MonoBehaviour:
     AuraSetup:
       Radius: 0
       Interval: 0
-  - Icon: {fileID: -219949570, guid: 32690fb2fe105264186c5472c3b2dab7, type: 3}
+  - Icon: {fileID: -219949570, guid: d5b38a44d661b59469b9795112af70db, type: 3}
     Description: Reduced cooldown
     Cooldown: 0.7
-    ViewPrefab: {fileID: 6295621220853740386, guid: 6ae3b1c6e45616043bf61e8d71a77b5d, type: 3}
+    ViewPrefab: {fileID: 6295621220853740386, guid: 08ce9f5922001044d87f0b92a159a8c4, type: 3}
     EffectSetups:
     - EffectTypeId: 1
       Value: 1.5
@@ -50,10 +50,10 @@ MonoBehaviour:
     AuraSetup:
       Radius: 0
       Interval: 0
-  - Icon: {fileID: -219949570, guid: 32690fb2fe105264186c5472c3b2dab7, type: 3}
+  - Icon: {fileID: -219949570, guid: d5b38a44d661b59469b9795112af70db, type: 3}
     Description: Reduced cooldown
     Cooldown: 0.6
-    ViewPrefab: {fileID: 6295621220853740386, guid: 6ae3b1c6e45616043bf61e8d71a77b5d, type: 3}
+    ViewPrefab: {fileID: 6295621220853740386, guid: 08ce9f5922001044d87f0b92a159a8c4, type: 3}
     EffectSetups:
     - EffectTypeId: 1
       Value: 2
@@ -68,10 +68,10 @@ MonoBehaviour:
     AuraSetup:
       Radius: 0
       Interval: 0
-  - Icon: {fileID: -219949570, guid: 32690fb2fe105264186c5472c3b2dab7, type: 3}
+  - Icon: {fileID: -219949570, guid: d5b38a44d661b59469b9795112af70db, type: 3}
     Description: Increased speed
     Cooldown: 0.6
-    ViewPrefab: {fileID: 6295621220853740386, guid: 6ae3b1c6e45616043bf61e8d71a77b5d, type: 3}
+    ViewPrefab: {fileID: 6295621220853740386, guid: 08ce9f5922001044d87f0b92a159a8c4, type: 3}
     EffectSetups:
     - EffectTypeId: 1
       Value: 2

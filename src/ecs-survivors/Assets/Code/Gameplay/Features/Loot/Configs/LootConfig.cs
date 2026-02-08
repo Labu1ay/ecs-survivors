@@ -12,7 +12,7 @@ namespace Code.Gameplay.Features.Loot.Configs
     public LootTypeId LootTypeId;
     public float Experience;
     public EntityBehaviour ViewPrefab;
-    
+
     public List<EffectSetup> EffectSetups;
     public List<StatusSetup> StatusSetups;
   }

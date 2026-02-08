@@ -1,4 +1,4 @@
-﻿using Code.Gameplay.Common.Time;
+using Code.Gameplay.Common.Time;
 using Entitas;
 
 namespace Code.Gameplay.Features.TargetCollection.Systems
@@ -13,18 +13,18 @@ namespace Code.Gameplay.Features.TargetCollection.Systems
       _time = time;
       _entities = game.GetGroup(GameMatcher
         .AllOf(
-          GameMatcher.TargetsBuffer,
+          GameMatcher.TargetBuffer,
           GameMatcher.CollectTargetsInterval,
           GameMatcher.CollectTargetsTimer));
     }
-    
+
     public void Execute()
     {
       foreach (GameEntity entity in _entities)
       {
         entity.ReplaceCollectTargetsTimer(entity.CollectTargetsTimer - _time.DeltaTime);
 
-        if (entity.CollectTargetsTimer <= 0f)
+        if (entity.CollectTargetsTimer <= 0)
         {
           entity.isReadyToCollectTargets = true;
           entity.ReplaceCollectTargetsTimer(entity.CollectTargetsInterval);

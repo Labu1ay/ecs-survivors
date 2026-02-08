@@ -7,8 +7,8 @@ using Code.Gameplay.Features.Effects;
 using Code.Gameplay.Features.Enchants;
 using Code.Gameplay.Features.Enemies;
 using Code.Gameplay.Features.Hero;
+using Code.Gameplay.Features.Lifetime.Systems;
 using Code.Gameplay.Features.LevelUp;
-using Code.Gameplay.Features.Lifetime;
 using Code.Gameplay.Features.Loot;
 using Code.Gameplay.Features.Movement;
 using Code.Gameplay.Features.Statuses;
@@ -19,18 +19,19 @@ using Code.Infrastructure.View;
 
 namespace Code.Gameplay
 {
-  public sealed class BattleFeature : Feature
+  public class BattleFeature : Feature
   {
     public BattleFeature(ISystemFactory systems)
     {
       Add(systems.Create<InputFeature>());
       Add(systems.Create<BindViewFeature>());
-
+      
       Add(systems.Create<HeroFeature>());
       Add(systems.Create<EnemyFeature>());
       Add(systems.Create<DeathFeature>());
-
+      
       Add(systems.Create<LootingFeature>());
+      
       Add(systems.Create<LevelUpFeature>());
       
       Add(systems.Create<MovementFeature>());
@@ -40,12 +41,12 @@ namespace Code.Gameplay
 
       Add(systems.Create<CollectTargetsFeature>());
       Add(systems.Create<EffectApplicationFeature>());
-
+    
       Add(systems.Create<EnchantFeature>());
-      Add(systems.Create<EffectsFeature>());
+      Add(systems.Create<EffectFeature>());
       Add(systems.Create<StatusFeature>());
       Add(systems.Create<StatsFeature>());
-
+      
       Add(systems.Create<ProcessDestructedFeature>());
     }
   }

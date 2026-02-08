@@ -9,7 +9,7 @@ namespace Code.Gameplay.Features.CharacterStats
     Unknown = 0,
     Speed = 1,
     MaxHp = 2,
-    Damage = 3,
+    Damage = 3
   }
 
   public static class InitStats
@@ -18,7 +18,7 @@ namespace Code.Gameplay.Features.CharacterStats
     {
       return Enum.GetValues(typeof(Stats))
         .Cast<Stats>()
-        .Except(new[] { Stats.Unknown })
+        .Except(new[] {Stats.Unknown})
         .ToDictionary(x => x, _ => 0f);
     }
   }

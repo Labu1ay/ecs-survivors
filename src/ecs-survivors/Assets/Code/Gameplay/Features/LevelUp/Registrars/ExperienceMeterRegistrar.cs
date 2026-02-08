@@ -7,11 +7,12 @@ namespace Code.Gameplay.Features.LevelUp.Registrars
   {
     public ExperienceMeter ExperienceMeter;
     
-    public override void RegisterComponents() => Entity.AddExperienceMeter(ExperienceMeter);
+    public override void RegisterComponents() => 
+      Entity.AddExperienceMeter(ExperienceMeter);
 
     public override void UnregisterComponents()
     {
-      if(Entity.hasExperienceMeter)
+      if (Entity.hasExperienceMeter)
         Entity.RemoveExperienceMeter();
     }
   }

@@ -13,8 +13,8 @@ namespace Code.Gameplay.Features.Enemies.Systems
         .AllOf(
           GameMatcher.Enemy,
           GameMatcher.WorldPosition));
-      
-      _heroes =  game.GetGroup(GameMatcher
+
+      _heroes = game.GetGroup(GameMatcher
         .AllOf(
           GameMatcher.Hero,
           GameMatcher.WorldPosition));

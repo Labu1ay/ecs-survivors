@@ -1,10 +1,10 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using Code.Gameplay.Features.Effects;
 using Entitas;
 
 namespace Code.Gameplay.Features.Statuses.Systems.StatusVisuals
 {
-  public class ApplyFreezeVisualsSystem : ReactiveSystem<GameEntity>
+  public class ApplyFreezeVisualsSystem : ReactiveSystem<GameEntity> 
   {
     public ApplyFreezeVisualsSystem(GameContext game) : base(game)
     {
@@ -20,7 +20,7 @@ namespace Code.Gameplay.Features.Statuses.Systems.StatusVisuals
       foreach (GameEntity status in statuses)
       {
         GameEntity target = status.Target();
-        if (target is { hasStatusVisuals: true }) 
+        if (target is {hasStatusVisuals: true}) 
           target.StatusVisuals.ApplyFreeze();
       }
     }

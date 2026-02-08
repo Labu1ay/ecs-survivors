@@ -1,4 +1,4 @@
-﻿using Entitas;
+using Entitas;
 
 namespace Code.Gameplay.Features.Movement.Systems
 {
@@ -11,12 +11,12 @@ namespace Code.Gameplay.Features.Movement.Systems
     {
       _orbitCenters = game.GetGroup(GameMatcher
         .AllOf(
-          GameMatcher.OrbitCenterPosition, 
+          GameMatcher.OrbitCenterPosition,
           GameMatcher.OrbitCenterFollowTarget));
-      
+
       _targets = game.GetGroup(GameMatcher
         .AllOf(
-          GameMatcher.Id, 
+          GameMatcher.Id,
           GameMatcher.WorldPosition));
     }
 
@@ -26,9 +26,7 @@ namespace Code.Gameplay.Features.Movement.Systems
       foreach (GameEntity target in _targets)
       {
         if (orbitCenter.OrbitCenterFollowTarget == target.Id)
-        {
           orbitCenter.ReplaceOrbitCenterPosition(target.WorldPosition);
-        }
       }
     }
   }

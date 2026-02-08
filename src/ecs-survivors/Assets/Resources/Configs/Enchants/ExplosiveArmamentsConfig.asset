@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77e1fe3ef19344e5b9f22eac602f7d62, type: 3}
+  m_Script: {fileID: 11500000, guid: 190a1235383847b983940f0e90c9f82a, type: 3}
   m_Name: ExplosiveArmamentsConfig
   m_EditorClassIdentifier: 
   TypeId: 2

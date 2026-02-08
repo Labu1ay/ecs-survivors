@@ -7,15 +7,12 @@ namespace Code.Gameplay.Features.Hero.Systems
     private readonly IGroup<GameEntity> _heroes;
     private readonly IGroup<GameEntity> _inputs;
 
-    public SetHeroDirectionByInputSystem(GameContext gameContext)
+    public SetHeroDirectionByInputSystem(GameContext game)
     {
-      _inputs = gameContext.GetGroup(GameMatcher.Input);
-      _heroes = gameContext.GetGroup(GameMatcher
-        .AllOf(
-          GameMatcher.Hero,
-          GameMatcher.MovementAvailable));
+      _heroes = game.GetGroup(GameMatcher.Hero);
+      _inputs = game.GetGroup(GameMatcher.Input);
     }
-
+    
     public void Execute()
     {
       foreach (GameEntity input in _inputs)
@@ -23,7 +20,7 @@ namespace Code.Gameplay.Features.Hero.Systems
       {
         hero.isMoving = input.hasAxisInput;
 
-        if (input.hasAxisInput)
+        if (input.hasAxisInput) 
           hero.ReplaceDirection(input.AxisInput.normalized);
       }
     }

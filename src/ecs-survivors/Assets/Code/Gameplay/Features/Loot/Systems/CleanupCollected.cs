@@ -1,4 +1,4 @@
-﻿using Entitas;
+using Entitas;
 
 namespace Code.Gameplay.Features.Loot.Systems
 {
@@ -6,9 +6,9 @@ namespace Code.Gameplay.Features.Loot.Systems
   {
     private readonly IGroup<GameEntity> _collected;
 
-    public CleanupCollected(GameContext game)
+    public CleanupCollected(GameContext contextParameter)
     {
-      _collected = game.GetGroup(GameMatcher.Collected);
+      _collected = contextParameter.GetGroup(GameMatcher.Collected);
     }
 
     public void Cleanup()

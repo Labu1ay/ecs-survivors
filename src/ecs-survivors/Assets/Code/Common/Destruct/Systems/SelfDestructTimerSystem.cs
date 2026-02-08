@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using Code.Gameplay.Common.Time;
 using Entitas;
 
@@ -20,7 +20,7 @@ namespace Code.Common.Destruct.Systems
     {
       foreach (GameEntity entity in _entities.GetEntities(_buffer))
       {
-        if (entity.SelfDestructTimer > 0) 
+        if (entity.SelfDestructTimer > 0)
           entity.ReplaceSelfDestructTimer(entity.SelfDestructTimer - _time.DeltaTime);
         else
         {

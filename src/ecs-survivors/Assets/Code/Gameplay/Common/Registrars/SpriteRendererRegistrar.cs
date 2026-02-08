@@ -6,7 +6,7 @@ namespace Code.Gameplay.Common.Registrars
   public class SpriteRendererRegistrar : EntityComponentRegistrar
   {
     public SpriteRenderer SpriteRenderer;
-    
+
     public override void RegisterComponents()
     {
       Entity.AddSpriteRenderer(SpriteRenderer);
@@ -14,7 +14,7 @@ namespace Code.Gameplay.Common.Registrars
 
     public override void UnregisterComponents()
     {
-      if(Entity.hasSpriteRenderer)
+      if (Entity.hasSpriteRenderer)
         Entity.RemoveSpriteRenderer();
     }
   }

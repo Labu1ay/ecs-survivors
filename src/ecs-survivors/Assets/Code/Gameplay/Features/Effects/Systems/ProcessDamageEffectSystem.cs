@@ -20,13 +20,13 @@ namespace Code.Gameplay.Features.Effects.Systems
       foreach (GameEntity effect in _effects)
       {
         GameEntity target = effect.Target();
-        
+
         effect.isProcessed = true;
-        
-        if(target.isDead)
+       
+        if (target.isDead)
           continue;
         
-        target.ReplaceCurrentHP(target.CurrentHP - effect.EffectValue);
+        target.ReplaceCurrentHp(target.CurrentHp - effect.EffectValue);
         
         if(target.hasDamageTakenAnimator)
           target.DamageTakenAnimator.PlayDamageTaken();

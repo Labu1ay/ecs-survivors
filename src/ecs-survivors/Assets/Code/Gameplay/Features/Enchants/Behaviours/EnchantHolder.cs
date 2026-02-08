@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Code.Gameplay.Features.Enchants.UIFactories;
+using Code.Gameplay.Features.Enchants.UIFactory;
 using UnityEngine;
 using Zenject;
 
@@ -7,29 +7,30 @@ namespace Code.Gameplay.Features.Enchants.Behaviours
 {
   public class EnchantHolder : MonoBehaviour
   {
+    public Transform EnchantsLayout;
+
+    private readonly List<Enchant> _enchants = new();
     private IEnchantUIFactory _factory;
-    public Transform EnchantLayout;
-    private readonly List<Enchant> _enchants = new ();
 
     [Inject]
     private void Construct(IEnchantUIFactory factory)
     {
       _factory = factory;
     }
-    
-    public void AddEnchant(EnchantTypeId typeId)
+
+    public void AddEnchant(EnchantTypeId enchantType)
     {
-      if(EnchantAlreadyHeld(typeId)) 
+      if (EnchantIsAlreadyHeld(enchantType))
         return;
       
-      Enchant enchant = _factory.CreateEnchant(EnchantLayout, typeId);
+      Enchant enchant = _factory.CreateEnchant(EnchantsLayout, enchantType);
+      
       _enchants.Add(enchant);
     }
 
-    public void RemoveEnchant(EnchantTypeId typeId)
+    public void RemoveEnchant(EnchantTypeId enchantType)
     {
-      Enchant enchant = _enchants.Find(x => x.Id == typeId);
-
+      Enchant enchant = _enchants.Find(enchant => enchant.Id == enchantType);
       if (enchant != null)
       {
         _enchants.Remove(enchant);
@@ -37,7 +38,7 @@ namespace Code.Gameplay.Features.Enchants.Behaviours
       }
     }
 
-    private bool EnchantAlreadyHeld(EnchantTypeId typeId) => 
-      _enchants.Find(x => x.Id == typeId) != null;
+    private bool EnchantIsAlreadyHeld(EnchantTypeId enchantType) => 
+      _enchants.Find(enchant => enchant.Id == enchantType) != null;
   }
 }

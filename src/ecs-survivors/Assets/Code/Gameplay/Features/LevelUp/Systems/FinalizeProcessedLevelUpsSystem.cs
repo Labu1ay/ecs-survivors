@@ -10,7 +10,7 @@ namespace Code.Gameplay.Features.LevelUp.Systems
     {
       _levelUps = game.GetGroup(GameMatcher
         .AllOf(
-          GameMatcher.LevelUp, 
+          GameMatcher.LevelUp,
           GameMatcher.Processed));
     }
 

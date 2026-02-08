@@ -1,4 +1,4 @@
-﻿using Entitas;
+using Entitas;
 
 namespace Code.Gameplay.Features.Hero.Systems
 {
@@ -6,19 +6,19 @@ namespace Code.Gameplay.Features.Hero.Systems
   {
     private readonly IGroup<GameEntity> _heroes;
 
-    public AnimateHeroMovementSystem(GameContext gameContext)
+    public AnimateHeroMovementSystem(GameContext game)
     {
-      _heroes = gameContext.GetGroup(GameMatcher
+      _heroes = game.GetGroup(GameMatcher
         .AllOf(
           GameMatcher.Hero,
           GameMatcher.HeroAnimator));
     }
-
+    
     public void Execute()
     {
       foreach (GameEntity hero in _heroes)
       {
-        if (hero.isMoving)
+        if(hero.isMoving)
           hero.HeroAnimator.PlayMove();
         else
           hero.HeroAnimator.PlayIdle();

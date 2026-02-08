@@ -1,4 +1,4 @@
-﻿using Code.Infrastructure.View.Registrars;
+using Code.Infrastructure.View.Registrars;
 
 namespace Code.Gameplay.Common.Registrars
 {
@@ -11,7 +11,7 @@ namespace Code.Gameplay.Common.Registrars
 
     public override void UnregisterComponents()
     {
-      if(Entity.hasTransform)
+      if (Entity.hasTransform)
         Entity.RemoveTransform();
     }
   }

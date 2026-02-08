@@ -1,4 +1,4 @@
-﻿using Code.Infrastructure.AssetManagement;
+using Code.Infrastructure.AssetManagement;
 using UnityEngine;
 using Zenject;
 
@@ -8,7 +8,7 @@ namespace Code.Infrastructure.View.Factory
   {
     private readonly IAssetProvider _assetProvider;
     private readonly IInstantiator _instantiator;
-    private readonly Vector3 _farAway = new Vector3(-999, -999, 0);
+    private readonly Vector3 _farAway = new(-999, 999, 0);
 
     public EntityViewFactory(IAssetProvider assetProvider, IInstantiator instantiator)
     {
@@ -22,20 +22,20 @@ namespace Code.Infrastructure.View.Factory
       EntityBehaviour view = _instantiator.InstantiatePrefabForComponent<EntityBehaviour>(
         viewPrefab,
         position: _farAway,
-        rotation: Quaternion.identity,
+        Quaternion.identity,
         parentTransform: null);
       
       view.SetEntity(entity);
 
       return view;
     }
-    
+
     public EntityBehaviour CreateViewForEntityFromPrefab(GameEntity entity)
     {
       EntityBehaviour view = _instantiator.InstantiatePrefabForComponent<EntityBehaviour>(
         entity.ViewPrefab,
         position: _farAway,
-        rotation: Quaternion.identity,
+        Quaternion.identity,
         parentTransform: null);
       
       view.SetEntity(entity);

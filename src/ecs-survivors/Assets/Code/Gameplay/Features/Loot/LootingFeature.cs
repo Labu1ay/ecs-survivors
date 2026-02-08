@@ -10,16 +10,17 @@ namespace Code.Gameplay.Features.Loot
     {
       Add(systems.Create<CastForPullablesSystem>());
       
-      Add(systems.Create<PullTowardHeroSystem>());
+      Add(systems.Create<PullTowardsHeroSystem>());
       Add(systems.Create<CollectWhenNearSystem>());
       
       Add(systems.Create<CollectExperienceSystem>());
       Add(systems.Create<CollectEffectItemSystem>());
       Add(systems.Create<CollectStatusItemSystem>());
-
+      
       Add(systems.Create<UpdateExperienceMeterSystem>());
-
+      
       Add(systems.Create<CleanupCollected>());
     }
   }
+
 }

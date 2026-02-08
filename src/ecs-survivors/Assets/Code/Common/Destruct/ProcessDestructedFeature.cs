@@ -1,6 +1,5 @@
 ﻿using Code.Common.Destruct.Systems;
 using Code.Infrastructure.Systems;
-using Unity.VisualScripting;
 
 namespace Code.Common.Destruct
 {
@@ -11,7 +10,6 @@ namespace Code.Common.Destruct
       Add(systems.Create<SelfDestructTimerSystem>());
       
       Add(systems.Create<CleanupGameDestructedViewSystem>());
-      
       Add(systems.Create<CleanupGameDestructedSystem>());
     }
   }

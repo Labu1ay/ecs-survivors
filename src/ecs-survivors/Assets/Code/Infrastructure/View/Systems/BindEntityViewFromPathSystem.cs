@@ -8,7 +8,7 @@ namespace Code.Infrastructure.View.Systems
   {
     private readonly IEntityViewFactory _entityViewFactory;
     private readonly IGroup<GameEntity> _entities;
-    private readonly List<GameEntity> _buffer = new (32);
+    private readonly List<GameEntity> _buffer = new(32);
 
     public BindEntityViewFromPathSystem(GameContext game, IEntityViewFactory entityViewFactory)
     {

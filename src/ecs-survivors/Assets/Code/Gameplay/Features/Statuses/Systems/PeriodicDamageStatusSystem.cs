@@ -1,4 +1,4 @@
-﻿using Code.Gameplay.Common.Time;
+using Code.Gameplay.Common.Time;
 using Code.Gameplay.Features.Effects;
 using Code.Gameplay.Features.Effects.Factory;
 using Entitas;
@@ -7,13 +7,13 @@ namespace Code.Gameplay.Features.Statuses.Systems
 {
   public class PeriodicDamageStatusSystem : IExecuteSystem
   {
-    private readonly ITimeService _time;
+    private readonly ITimeService _timeService;
     private readonly IEffectFactory _effectFactory;
     private readonly IGroup<GameEntity> _statuses;
 
-    public PeriodicDamageStatusSystem(GameContext game, ITimeService time, IEffectFactory effectFactory)
+    public PeriodicDamageStatusSystem(GameContext game, ITimeService timeService, IEffectFactory effectFactory)
     {
-      _time = time;
+      _timeService = timeService;
       _effectFactory = effectFactory;
       _statuses = game.GetGroup(GameMatcher
         .AllOf(
@@ -29,14 +29,14 @@ namespace Code.Gameplay.Features.Statuses.Systems
     {
       foreach (GameEntity status in _statuses)
       {
-        if(status.TimeSinceLastTick >= 0f)
-          status.ReplaceTimeSinceLastTick(status.TimeSinceLastTick - _time.DeltaTime);
+        if (status.TimeSinceLastTick >= 0)
+          status.ReplaceTimeSinceLastTick(status.TimeSinceLastTick - _timeService.DeltaTime);
         else
         {
           status.ReplaceTimeSinceLastTick(status.Period);
           
-          _effectFactory.CreateEffect(new EffectSetup(){EffectTypeId = EffectTypeId.Damage, Value = 1f},
-            status.ProducerId, 
+          _effectFactory.CreateEffect(new EffectSetup {EffectTypeId = EffectTypeId.Damage, Value = status.EffectValue},
+            status.ProducerId,
             status.TargetId);
         }
       }

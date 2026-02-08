@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using Code.Gameplay.Common.Time;
 using Entitas;
 
@@ -8,10 +8,8 @@ namespace Code.Gameplay.Features.LevelUp.Systems
   {
     private readonly ITimeService _timeService;
 
-    public StopTimeOnLevelUpSystem(GameContext game, ITimeService timeService) : base(game)
-    {
+    public StopTimeOnLevelUpSystem(GameContext game, ITimeService timeService) : base(game) => 
       _timeService = timeService;
-    }
 
     protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context) =>
       context.CreateCollector(GameMatcher.LevelUp.Added());

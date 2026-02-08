@@ -1,4 +1,4 @@
-﻿using Code.Gameplay.Features.Statuses.Systems;
+using Code.Gameplay.Features.Statuses.Systems;
 using Code.Infrastructure.Systems;
 
 namespace Code.Gameplay.Features.Statuses
@@ -10,7 +10,7 @@ namespace Code.Gameplay.Features.Statuses
       Add(systems.Create<StatusDurationSystem>());
       Add(systems.Create<PeriodicDamageStatusSystem>());
       Add(systems.Create<ApplyFreezeStatusSystem>());
-
+      
       Add(systems.Create<StatusVisualsFeature>());
       
       Add(systems.Create<CleanupUnappliedStatusLinkedChanges>());

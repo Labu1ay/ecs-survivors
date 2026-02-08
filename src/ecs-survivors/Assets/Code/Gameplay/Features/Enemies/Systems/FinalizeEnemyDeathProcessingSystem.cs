@@ -6,14 +6,14 @@ namespace Code.Gameplay.Features.Enemies.Systems
   public class FinalizeEnemyDeathProcessingSystem : IExecuteSystem
   {
     private readonly IGroup<GameEntity> _enemies;
-    private List<GameEntity> _buffer = new (128);
+    private readonly List<GameEntity> _buffer =  new(128);
 
     public FinalizeEnemyDeathProcessingSystem(GameContext game)
     {
       _enemies = game.GetGroup(GameMatcher
         .AllOf(
-          GameMatcher.Enemy, 
-          GameMatcher.Dead, 
+          GameMatcher.Enemy,
+          GameMatcher.Dead,
           GameMatcher.ProcessingDeath));
     }
 

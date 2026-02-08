@@ -13,39 +13,36 @@ namespace Code.Gameplay.Features.LevelUp.Behaviours
     private const float StampAnimationTime = 1f;
     
     public AbilityId Id;
-    
     public Image Icon;
     public TextMeshProUGUI Description;
-    public Button Button;
+    public Button SelectCardButton;
     public GameObject Stamp;
+    
     private Action<AbilityId> _onSelected;
 
-    public void Setup(AbilityId id, AbilityLevel level, Action<AbilityId> onSelected)
+    public AbilityCard Setup(AbilityId id, AbilityLevel abilityLevel, Action<AbilityId> onSelected)
     {
-      Id = id;
-      Icon.sprite = level.Icon;
-      Description.text = level.Description;
       _onSelected = onSelected;
-      
-      Button.onClick.AddListener(SelectCard);
+      Id = id;
+      Icon.sprite = abilityLevel.Icon;
+      Description.text = abilityLevel.Description;
+
+      SelectCardButton.onClick.AddListener(SelectCard);
+
+      return this;
     }
 
-    private void SelectCard()
-    {
+    private void OnDestroy() => 
+      SelectCardButton.onClick.RemoveListener(SelectCard);
+
+    private void SelectCard() => 
       StartCoroutine(StampAndReport());
-    }
 
     private IEnumerator StampAndReport()
     {
       Stamp.SetActive(true);
       yield return new WaitForSeconds(StampAnimationTime);
       
-      _onSelected?.Invoke(Id);
+      _onSelected(Id);
     }
-
-    private void OnDestroy()
-    {
-      Button.onClick.RemoveListener(SelectCard);
-    }
-  }
-}
+  }}

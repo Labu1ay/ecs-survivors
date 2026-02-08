@@ -7,23 +7,20 @@ namespace Code.Gameplay.Features.Enchants.Systems
 {
   public class PoisonEnchantSystem : IExecuteSystem
   {
-    private readonly IStaticDataService _staticDataService;
-    
     private readonly IGroup<GameEntity> _enchants;
     private readonly IGroup<GameEntity> _armaments;
-    
-    private readonly List<GameEntity> _buffer = new (32);
+    private readonly List<GameEntity> _buffer = new(32);
+    private readonly IStaticDataService _staticDataService;
 
     public PoisonEnchantSystem(GameContext game, IStaticDataService staticDataService)
     {
       _staticDataService = staticDataService;
-      
       _enchants = game.GetGroup(GameMatcher
         .AllOf(
           GameMatcher.EnchantTypeId,
           GameMatcher.ProducerId,
           GameMatcher.PoisonEnchant));
-      
+
       _armaments = game.GetGroup(GameMatcher
         .AllOf(
           GameMatcher.Armament,

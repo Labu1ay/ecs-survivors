@@ -9,7 +9,7 @@ namespace Code.Gameplay.Features.TargetCollection.Systems
   {
     private readonly IPhysicsService _physicsService;
     private readonly IGroup<GameEntity> _ready;
-    private readonly List<GameEntity> _buffer = new (64);
+    private readonly List<GameEntity> _buffer = new(64);
 
     public CastForTargetsNoLimitSystem(GameContext game, IPhysicsService physicsService)
     {
@@ -17,27 +17,29 @@ namespace Code.Gameplay.Features.TargetCollection.Systems
       _ready = game.GetGroup(GameMatcher
         .AllOf(
           GameMatcher.ReadyToCollectTargets,
-          GameMatcher.TargetsBuffer,
-          GameMatcher.WorldPosition,
           GameMatcher.Radius,
+          GameMatcher.TargetBuffer,
+          GameMatcher.WorldPosition,
           GameMatcher.LayerMask)
-        .NoneOf(GameMatcher.TargetLimit));
+        .NoneOf(GameMatcher.TargetLimit)
+      );
     }
 
     public void Execute()
     {
       foreach (GameEntity entity in _ready.GetEntities(_buffer))
       {
-        entity.TargetsBuffer.AddRange(TargetsInRadius(entity));
-        
-        if(!entity.isCollectingTargetsContinuously)
+        entity.TargetBuffer.AddRange(TargetsInRadius(entity));
+
+        if (!entity.isCollectingTargetsContinuously)
           entity.isReadyToCollectTargets = false;
       }
     }
-
-    private IEnumerable<int> TargetsInRadius(GameEntity entity) => 
-      _physicsService
-        .CircleCast(entity.WorldPosition, entity.Radius, entity.LayerMask)
+    
+    private IEnumerable<int> TargetsInRadius(GameEntity entity)
+    {
+      return _physicsService.CircleCast(entity.WorldPosition, radius: entity.Radius, entity.LayerMask)
         .Select(x => x.Id);
+    }
   }
 }

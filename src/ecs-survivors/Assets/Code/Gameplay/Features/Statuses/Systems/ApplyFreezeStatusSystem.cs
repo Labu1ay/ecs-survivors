@@ -1,7 +1,6 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using Code.Common.Entity;
 using Code.Gameplay.Features.CharacterStats;
-using Code.Gameplay.Features.Effects;
 using Entitas;
 
 namespace Code.Gameplay.Features.Statuses.Systems
@@ -9,7 +8,7 @@ namespace Code.Gameplay.Features.Statuses.Systems
   public class ApplyFreezeStatusSystem : IExecuteSystem
   {
     private readonly IGroup<GameEntity> _statuses;
-    private readonly List<GameEntity> _buffer = new (32);
+    private readonly List<GameEntity> _buffer = new(32);
 
     public ApplyFreezeStatusSystem(GameContext game)
     {
@@ -18,7 +17,7 @@ namespace Code.Gameplay.Features.Statuses.Systems
           GameMatcher.Id,
           GameMatcher.Status,
           GameMatcher.Freeze,
-          GameMatcher.ProducerId,
+          GameMatcher.ProducerId, 
           GameMatcher.TargetId,
           GameMatcher.EffectValue)
         .NoneOf(GameMatcher.Affected));

@@ -20,7 +20,7 @@ namespace Code.Gameplay.Features.Armaments.Behaviours
     {
       float scale = Entity.Radius * 2;
       Container.localScale = new Vector3(scale, scale, scale);
-      
+
       _radiusPrev = Entity.Radius;
     }
   }

@@ -1,4 +1,4 @@
-﻿using Entitas;
+using Entitas;
 
 namespace Code.Gameplay.Features.Lifetime.Systems
 {
@@ -11,12 +11,12 @@ namespace Code.Gameplay.Features.Lifetime.Systems
     {
       _statuses = game.GetGroup(GameMatcher
         .AllOf(
-          GameMatcher.Status, 
+          GameMatcher.Status,
           GameMatcher.TargetId));
-      
+
       _dead = game.GetGroup(GameMatcher
         .AllOf(
-          GameMatcher.Id, 
+          GameMatcher.Id,
           GameMatcher.Dead));
     }
 
@@ -25,7 +25,7 @@ namespace Code.Gameplay.Features.Lifetime.Systems
       foreach (GameEntity entity in _dead)
       foreach (GameEntity status in _statuses)
       {
-        if(status.TargetId == entity.Id)
+        if (status.TargetId == entity.Id)
           status.isUnapplied = true;
       }
     }

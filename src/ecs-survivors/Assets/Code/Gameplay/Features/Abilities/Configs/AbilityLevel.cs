@@ -12,13 +12,14 @@ namespace Code.Gameplay.Features.Abilities.Configs
   {
     public Sprite Icon;
     public string Description;
-    public float Cooldown;
     
+    public float Cooldown;
+
     public EntityBehaviour ViewPrefab;
 
     public List<EffectSetup> EffectSetups;
     public List<StatusSetup> StatusSetups;
-
+    
     public ProjectileSetup ProjectileSetup;
     public AuraSetup AuraSetup;
   }
