@@ -29,6 +29,7 @@ using Code.Infrastructure.States.StateMachine;
 using Code.Infrastructure.Systems;
 using Code.Infrastructure.View.Factory;
 using Code.Progress.Provider;
+using UnityEngine.Windows;
 using Zenject;
 
 namespace Code.Infrastructure.Installers
@@ -81,6 +82,8 @@ namespace Code.Infrastructure.Installers
       Container.Bind<Contexts>().FromInstance(Contexts.sharedInstance).AsSingle();
       
       Container.Bind<GameContext>().FromInstance(Contexts.sharedInstance.game).AsSingle();
+      Container.Bind<InputContext>().FromInstance(Contexts.sharedInstance.input).AsSingle();
+      Container.Bind<MetaContext>().FromInstance(Contexts.sharedInstance.meta).AsSingle();
     }
 
     private void BindCameraProvider()
