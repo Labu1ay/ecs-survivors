@@ -8,6 +8,7 @@ using Code.Meta;
 using Code.Meta.Features.Simulation;
 using Code.Progress.Data;
 using Code.Progress.Provider;
+using Code.Progress.SaveLoad;
 using UnityEngine;
 
 namespace Code.Infrastructure.States.GameStates
@@ -17,27 +18,29 @@ namespace Code.Infrastructure.States.GameStates
     private readonly IGameStateMachine _stateMachine;
     private readonly ITimeService _time;
     private readonly IProgressProvider _progressProvider;
+    private readonly ISaveLoadService _saveLoadService;
     private readonly ISystemFactory _systemFactory;
     private ActualizationFeature _actualizationFeature;
+    
     private readonly TimeSpan TwoDays = TimeSpan.FromDays(2);
 
     public ActualizeProgressState(
       IGameStateMachine stateMachine, 
       ITimeService time,
       IProgressProvider progressProvider,
+      ISaveLoadService saveLoadService,
       ISystemFactory systemFactory)
     {
       _stateMachine = stateMachine;
       _time = time;
       _progressProvider = progressProvider;
+      _saveLoadService = saveLoadService;
       _systemFactory = systemFactory;
     }
 
     public void Enter()
     {
       _actualizationFeature = _systemFactory.Create<ActualizationFeature>();
-      
-      _progressProvider.ProgressData.LastSimulationTickTime = _time.UtcNow - TwoDays;
       
       ActualizeProgress(_progressProvider.ProgressData);
       
@@ -46,10 +49,6 @@ namespace Code.Infrastructure.States.GameStates
 
     private void ActualizeProgress(ProgressData data)
     {
-      CreateMetaEntity.Empty()
-        .AddGoldGainBoost(1)
-        .AddDuration((float)TimeSpan.FromDays(1).TotalSeconds);
-      
       _actualizationFeature.Initialize();
       _actualizationFeature.DeactivateReactiveSystems();
 
@@ -70,6 +69,7 @@ namespace Code.Infrastructure.States.GameStates
       }
 
       data.LastSimulationTickTime = _time.UtcNow;
+      _saveLoadService.SaveProgress();
     }
 
     private DateTime GetLimitedUntilTime(ProgressData data)
